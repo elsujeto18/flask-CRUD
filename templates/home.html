@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+
+{% block content%}
+
+<div class="jumbotron">
+    <h1 class="display-4">Proyecto Flask para la asignatura Integración de Sistemas</h1>
+    <p class="lead">Bienvenidos al portal Administrativo </p>
+    <hr class="my-4">
+    
+    <a class="btn btn-primary btn-lg" href="{{ url_for('persona')}}" role="button">Seccion Persona</a>
+</div>
+
+
+<!--<div class="container">
+    <img src="{{ url_for('static', filename='images/imagen1.jpg')}}" class="img-fluid" alt="Responsive image" height="500" width="500">
+    <img src="{{ url_for('static', filename='images/imagen2.png')}}" class="img-fluid" alt="Responsive image" height="500" width="500">
+    <img src="{{ url_for('static', filename='images/WhatsApp Image 2020-03-29 at 20.48.19.jpeg')}}" class="img-fluid" alt="Responsive image" height="500" width="500">
+</div >-->
+
+
+
+
+
+
+
+
+
+
+{% endblock%}

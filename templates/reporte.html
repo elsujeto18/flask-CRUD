@@ -1,0 +1,108 @@
+{% extends "layout.html"%}
+
+
+
+{% block content%}
+
+{% with messages = get_flashed_messages()%}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+
+
+
+<div>
+
+    <h1 style="color: aliceblue;">Tabla de Reporte</h1>
+
+    <table class="table table-striped table-dark table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pe in persona%}
+            <tr>
+
+                <td>{{ pe.1}}</td>
+                <td>{{ pe.2}}</td>
+                <td>{{ pe.3}}</td>
+                <td>{{ pe.5}}</td>
+                <td>{{ pe.6}}</td>
+                <td>{{ pe.4}}</td>
+                <td>
+                    <a href="/edit/{{ pe.0 }}" class="btn btn-secondary ">Editar</a>
+                    <a href="/delete/{{ pe.0 }}" class="btn btn-danger btn-delete">Eliminar</a>
+                </td>
+            </tr>
+
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+
+<div>
+    <form  method="POST" action="/buscar" >
+        <div class="row">
+            <div class="form-group col">
+                <input type="text" class="form-control" placeholder="Buscar por autor o libro" name="book">
+            </div>
+    
+            <div class="form-group col">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </div> 
+    </form>
+</div>
+
+
+<div>
+
+    <h1 style="color: aliceblue;">Tabla de Libros</h1>
+
+    <table class="table table-striped table-dark table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Nombre del libro</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Fecha de Publicación</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for lib in libro%}
+            <tr>
+
+                <td>{{ lib.1}}</td>
+                <td>{{ lib.2}}</td>
+                <td>{{ lib.3}}</td>
+
+            </tr>
+
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+{% endblock%}

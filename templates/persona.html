@@ -1,0 +1,64 @@
+{% extends "layout.html"%}
+
+
+{% block content%}
+
+{% with messages = get_flashed_messages()%}
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form action="/add_person" method="POST">
+
+    <div class="row">
+        <div class="form-group col">
+            <label style="color: beige;">Nombre</label>
+            <input type="text" class="form-control" name="nombre">
+        </div>
+
+        <div class="form-group col">
+            <label style="color: beige;">Apellido</label>
+            <input type="text" class="form-control" name="apellido">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label style="color: beige;">Direccion</label>
+            <input type="text" class="form-control" name="dire">
+        </div>
+
+        <div class="form-group col">
+            <label style="color: beige;">Telefono</label>
+            <input type="text" class="form-control" name="tele">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label style="color: beige;">Cedula</label>
+            <input type="number" class="form-control" name="cedu">
+        </div>
+
+        <div class="form-group col">
+            <label style="color: beige;">Edad</label>
+            <input type="number" class="form-control" name="edad">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    
+</form>
+
+
+{% endblock%}

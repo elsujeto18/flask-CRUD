@@ -1,0 +1,62 @@
+{% extends "layout.html"%}
+
+
+{% block content%}
+
+
+<form action="/update/{{persona.0}}" method="POST">
+
+    <div class="row">
+        
+        <div class="col">
+            <label style="color: beige;">Nombre</label>
+            <input type="text" class="form-control" name="nombre" value= '{{persona.1}}'>
+
+        </div>
+        <div class="col">
+            <label style="color: beige;">Apellido</label>
+            <input type="text" class="form-control" name="apellido" value= '{{persona.2}}'>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col">
+            <label style="color: beige;">Direccion</label>
+            <input type="text" class="form-control" name="dire" value= '{{persona.5}}'>
+
+        </div>
+
+        <div class="form-group col">
+            <label style="color: beige;">Telefono</label>
+            <input type="text" class="form-control" name="tele" value= '{{persona.6}}'>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col">
+            <label style="color: beige;">Cedula</label>
+            <input type="number" class="form-control" name="cedu" value= '{{persona.3}}'>
+
+        </div>
+
+        <div class="form-group col">
+            <label style="color: beige;">Edad</label>
+            <input type="number" class="form-control" name="edad" value= '{{persona.4}}'>
+
+        </div>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    
+</form>
+
+
+{% endblock%}
